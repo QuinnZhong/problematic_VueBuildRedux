@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>: Using :</title>
+</head>
+<body>
+    <main id="app"> <!--this is a hook that tells-->
+        <h1>{{ message }}</h1>
+
+        <profpanel v-for="item in dynamicData" :item="item"></profpanel>
+        <p>{{ anotherMessage }}</p>
+        <span>{{ yesanothermessage }}</span>
+
+       <!-- <ul>
+            <li v-for="prof in profs">
+                <h1>{{ prof }}</h1>
+                <button @click="logClicked">Show My Data</button>
+            </li>
+        </ul> --> 
+         <ul>
+            <li v-for="item in dynamicData">
+                <h3>{{ item.name }}</h3>
+                 <h4>{{ item.nickname }}</h4>
+                <h5>{{ item.role }}</h5> 
+                <button @click="showData(item)">Show My Data</button>
+            </li>
+        </ul>
+        <section>
+            <pre>{{ currentProf }}</pre>
+        </section> 
+
+        <form @keyup.enter="sendForm" action="">
+            <input v-module="username" type="text" placeholder="username">
+            <input v-module="password" type="password" placeholder="password">
+            <input @click="sendForm" type="submit" value="go">
+        </form>
+    </main>
+
+    <!--ALways load third party script before-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script src="js/main.js" type="module" defer></script>
+    
+</body>
+</html>
